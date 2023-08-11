@@ -15,3 +15,20 @@ C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\bin\Debug\net6.0\E
 C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\bin\Debug\net6.0\ECommerce.Lib.BE.pdb
 C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\bin\Debug\net6.0\ECommerce.Lib.DAL.pdb
 C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ECommerce.Lib.BLL.csproj.CopyComplete
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\bin\Debug\net6.0\ECommerce.Lib.BLL.deps.json
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\bin\Debug\net6.0\ECommerce.Lib.BLL.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\bin\Debug\net6.0\ECommerce.Lib.BLL.pdb
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\bin\Debug\net6.0\ECommerce.Lib.BE.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\bin\Debug\net6.0\ECommerce.Lib.DAL.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\bin\Debug\net6.0\ECommerce.Lib.BE.pdb
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\bin\Debug\net6.0\ECommerce.Lib.DAL.pdb
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ECommerce.Lib.BLL.csproj.AssemblyReference.cache
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ECommerce.Lib.BLL.GeneratedMSBuildEditorConfig.editorconfig
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ECommerce.Lib.BLL.AssemblyInfoInputs.cache
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ECommerce.Lib.BLL.AssemblyInfo.cs
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ECommerce.Lib.BLL.csproj.CoreCompileInputs.cache
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ECommerce.Lib.BLL.csproj.CopyComplete
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ECommerce.Lib.BLL.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\refint\ECommerce.Lib.BLL.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ECommerce.Lib.BLL.pdb
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ref\ECommerce.Lib.BLL.dll

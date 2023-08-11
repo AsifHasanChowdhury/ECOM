@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USER\\source\\repos\\E-CommerceBacked\\ECommerce.Lib.DAL\\ECommerce.Lib.DAL.csproj",
+      "projectUniqueName": "E:\\N-Tier Architecture X Repository Pattern\\ECOM\\E-CommerceBacked\\ECommerce.Lib.DAL\\ECommerce.Lib.DAL.csproj",
       "projectName": "ECommerce.Lib.DAL",
-      "projectPath": "C:\\Users\\USER\\source\\repos\\E-CommerceBacked\\ECommerce.Lib.DAL\\ECommerce.Lib.DAL.csproj",
+      "projectPath": "E:\\N-Tier Architecture X Repository Pattern\\ECOM\\E-CommerceBacked\\ECommerce.Lib.DAL\\ECommerce.Lib.DAL.csproj",
       "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USER\\source\\repos\\E-CommerceBacked\\ECommerce.Lib.DAL\\obj\\",
+      "outputPath": "E:\\N-Tier Architecture X Repository Pattern\\ECOM\\E-CommerceBacked\\ECommerce.Lib.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\USER\\source\\repos\\E-CommerceBacked\\ECommerce.Lib.BE\\ECommerce.Lib.BE.csproj": {
-              "projectPath": "C:\\Users\\USER\\source\\repos\\E-CommerceBacked\\ECommerce.Lib.BE\\ECommerce.Lib.BE.csproj"
+            "E:\\N-Tier Architecture X Repository Pattern\\ECOM\\E-CommerceBacked\\ECommerce.Lib.BE\\ECommerce.Lib.BE.csproj": {
+              "projectPath": "E:\\N-Tier Architecture X Repository Pattern\\ECOM\\E-CommerceBacked\\ECommerce.Lib.BE\\ECommerce.Lib.BE.csproj"
             }
           }
         }

@@ -10,3 +10,15 @@ C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BE\obj\Debug\net6.0\EC
 C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BE\obj\Debug\net6.0\refint\ECommerce.Lib.BE.dll
 C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BE\obj\Debug\net6.0\ECommerce.Lib.BE.pdb
 C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BE\obj\Debug\net6.0\ref\ECommerce.Lib.BE.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BE\bin\Debug\net6.0\ECommerce.Lib.BE.deps.json
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BE\bin\Debug\net6.0\ECommerce.Lib.BE.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BE\bin\Debug\net6.0\ECommerce.Lib.BE.pdb
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BE\obj\Debug\net6.0\ECommerce.Lib.BE.csproj.AssemblyReference.cache
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BE\obj\Debug\net6.0\ECommerce.Lib.BE.GeneratedMSBuildEditorConfig.editorconfig
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BE\obj\Debug\net6.0\ECommerce.Lib.BE.AssemblyInfoInputs.cache
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BE\obj\Debug\net6.0\ECommerce.Lib.BE.AssemblyInfo.cs
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BE\obj\Debug\net6.0\ECommerce.Lib.BE.csproj.CoreCompileInputs.cache
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BE\obj\Debug\net6.0\ECommerce.Lib.BE.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BE\obj\Debug\net6.0\refint\ECommerce.Lib.BE.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BE\obj\Debug\net6.0\ECommerce.Lib.BE.pdb
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BE\obj\Debug\net6.0\ref\ECommerce.Lib.BE.dll

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S/fHwumNARsSUfZsYpcXwrWyYmMtr0wIfk0qrNNHPx/TbJAY36FzgekGizlZ+T7ZaKvPOucBbQsQ5EoMpnQNbA==",
+  "dgSpecHash": "Jghz36SLfHxOoUT/dhv8+y+9yJbPDb29p8SV81UqMnEe2nFr8/hnXgR/Dcrxu9C7TKc8ELJNwSEL5NewjFJD+g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\source\\repos\\E-CommerceBacked\\ECommerce.Lib.DAL\\ECommerce.Lib.DAL.csproj",
+  "projectFilePath": "E:\\N-Tier Architecture X Repository Pattern\\ECOM\\E-CommerceBacked\\ECommerce.Lib.DAL\\ECommerce.Lib.DAL.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -32,3 +32,37 @@ C:\Users\USER\source\repos\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ref\ECo
 C:\Users\USER\source\repos\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Certificate.dll
 C:\Users\USER\source\repos\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\USER\source\repos\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ECommerceUI.csproj.CopyComplete
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\appsettings.Development.json
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\appsettings.json
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\ECommerceUI.staticwebassets.runtime.json
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\ECommerceUI.exe
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\ECommerceUI.deps.json
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\ECommerceUI.runtimeconfig.json
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\ECommerceUI.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\ECommerceUI.pdb
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Certificate.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ECommerceUI.csproj.AssemblyReference.cache
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ECommerceUI.GeneratedMSBuildEditorConfig.editorconfig
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ECommerceUI.AssemblyInfoInputs.cache
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ECommerceUI.AssemblyInfo.cs
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ECommerceUI.csproj.CoreCompileInputs.cache
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ECommerceUI.MvcApplicationPartsAssemblyInfo.cache
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ECommerceUI.RazorAssemblyInfo.cache
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ECommerceUI.RazorAssemblyInfo.cs
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\staticwebassets\msbuild.ECommerceUI.Microsoft.AspNetCore.StaticWebAssets.props
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\staticwebassets\msbuild.build.ECommerceUI.props
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ECommerceUI.props
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.ECommerceUI.props
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\staticwebassets.pack.json
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\staticwebassets.build.json
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\staticwebassets.development.json
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\scopedcss\bundle\ECommerceUI.styles.css
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\scopedcss\projectbundle\ECommerceUI.bundle.scp.css
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ECommerceUI.csproj.CopyComplete
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ECommerceUI.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\refint\ECommerceUI.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ECommerceUI.pdb
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ECommerceUI.genruntimeconfig.cache
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ref\ECommerceUI.dll

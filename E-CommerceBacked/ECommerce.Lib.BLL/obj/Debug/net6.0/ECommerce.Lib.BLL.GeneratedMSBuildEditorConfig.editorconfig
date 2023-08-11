@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ECommerce.Lib.BLL
-build_property.ProjectDir = C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\
+build_property.ProjectDir = E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerce.Lib.BLL\

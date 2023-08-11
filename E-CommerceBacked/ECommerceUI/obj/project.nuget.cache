@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JnFhDpjdNwIW9ALV4ZuX/BreRpyajmdxa6eoDb6xuLoOWI03aqurjwl+QnMRlj6J1l85v2JnZSh6Ahg1BiLxmA==",
+  "dgSpecHash": "j3fbHv3BS3x+nfRLQA2ez3UTRgO/ulXYSaj9tJxle6bCJeo0ubVd6M6BKBcg+f8B+8jHCvzw7xyxno00KlOGnw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\source\\repos\\E-CommerceBacked\\ECommerceUI\\ECommerceUI.csproj",
+  "projectFilePath": "E:\\N-Tier Architecture X Repository Pattern\\ECOM\\E-CommerceBacked\\ECommerceUI\\ECommerceUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.authentication.certificate\\6.0.21\\microsoft.aspnetcore.authentication.certificate.6.0.21.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",

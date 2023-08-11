@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "huWdGE1Iq/nBU2na54mFM5FQEtbBA4RMt5dzz7uK+SLxofWEpKZSyK+t7401k57TsS0Jv04h4TnDXkazjEufNw==",
+  "dgSpecHash": "DUGG0BhZe7CKzwVeAjmFYc6i0Mes4r4MOrK7agp6+nYflN+GuaceLUpLAoIVD43swACn56TX/QZZoRJ97jx/ww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\source\\repos\\E-CommerceBacked\\ECommerce.Lib.BLL\\ECommerce.Lib.BLL.csproj",
+  "projectFilePath": "E:\\N-Tier Architecture X Repository Pattern\\ECOM\\E-CommerceBacked\\ECommerce.Lib.BLL\\ECommerce.Lib.BLL.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
