@@ -1,0 +1,17 @@
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\bin\Debug\net6.0\ECommerce.Lib.BLL.deps.json
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\bin\Debug\net6.0\ECommerce.Lib.BLL.dll
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\bin\Debug\net6.0\ECommerce.Lib.BLL.pdb
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ECommerce.Lib.BLL.csproj.AssemblyReference.cache
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ECommerce.Lib.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ECommerce.Lib.BLL.AssemblyInfoInputs.cache
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ECommerce.Lib.BLL.AssemblyInfo.cs
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ECommerce.Lib.BLL.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ECommerce.Lib.BLL.dll
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\refint\ECommerce.Lib.BLL.dll
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ECommerce.Lib.BLL.pdb
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ref\ECommerce.Lib.BLL.dll
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\bin\Debug\net6.0\ECommerce.Lib.BE.dll
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\bin\Debug\net6.0\ECommerce.Lib.DAL.dll
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\bin\Debug\net6.0\ECommerce.Lib.BE.pdb
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\bin\Debug\net6.0\ECommerce.Lib.DAL.pdb
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.BLL\obj\Debug\net6.0\ECommerce.Lib.BLL.csproj.CopyComplete

@@ -1,0 +1,15 @@
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.DAL\bin\Debug\net6.0\ECommerce.Lib.DAL.deps.json
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.DAL\bin\Debug\net6.0\ECommerce.Lib.DAL.dll
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.DAL\bin\Debug\net6.0\ECommerce.Lib.DAL.pdb
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.DAL\obj\Debug\net6.0\ECommerce.Lib.DAL.csproj.AssemblyReference.cache
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.DAL\obj\Debug\net6.0\ECommerce.Lib.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.DAL\obj\Debug\net6.0\ECommerce.Lib.DAL.AssemblyInfoInputs.cache
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.DAL\obj\Debug\net6.0\ECommerce.Lib.DAL.AssemblyInfo.cs
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.DAL\obj\Debug\net6.0\ECommerce.Lib.DAL.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.DAL\obj\Debug\net6.0\ECommerce.Lib.DAL.dll
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.DAL\obj\Debug\net6.0\refint\ECommerce.Lib.DAL.dll
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.DAL\obj\Debug\net6.0\ECommerce.Lib.DAL.pdb
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.DAL\obj\Debug\net6.0\ref\ECommerce.Lib.DAL.dll
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.DAL\bin\Debug\net6.0\ECommerce.Lib.BE.dll
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.DAL\bin\Debug\net6.0\ECommerce.Lib.BE.pdb
+C:\Users\USER\source\repos\E-CommerceBacked\ECommerce.Lib.DAL\obj\Debug\net6.0\ECommerce.Lib.DAL.csproj.CopyComplete
