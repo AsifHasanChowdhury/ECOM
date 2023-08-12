@@ -9,6 +9,7 @@ namespace ECommerceUI.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly HttpClient _httpClient;
+        private readonly IConfiguration _configuration;
 
         public HomeController(ILogger<HomeController> logger, HttpClient httpClient)
         {

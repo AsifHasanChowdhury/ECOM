@@ -1,6 +1,10 @@
+using System.Text;
 using Microsoft.AspNetCore.Authentication.Certificate;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -8,6 +12,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient("", client =>
 {
     client.BaseAddress = new Uri("https://localhost:7030");
+    client.Timeout=TimeSpan.FromSeconds(5);
     // You can add other configurations here
 });
 
@@ -16,6 +21,37 @@ builder.Services.AddAuthentication(
         CertificateAuthenticationDefaults.AuthenticationScheme)
     .AddCertificate();
 
+builder.Services.AddAuthentication(opt =>
+    {
+        opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = "https://localhost:44379",
+            ValidAudience = "https://localhost:44379",
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
+        };
+    });
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy =>
+        {
+            policy.WithOrigins("*");
+            policy.AllowAnyHeader();
+            policy.AllowAnyMethod();
+
+        });
+
+});
 
 var app = builder.Build();
 

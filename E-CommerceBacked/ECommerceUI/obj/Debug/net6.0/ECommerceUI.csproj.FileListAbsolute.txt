@@ -41,7 +41,14 @@ E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bi
 E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\ECommerceUI.dll
 E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\ECommerceUI.pdb
 E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Certificate.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ECommerceUI.csproj.AssemblyReference.cache
 E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ECommerceUI.GeneratedMSBuildEditorConfig.editorconfig
 E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\obj\Debug\net6.0\ECommerceUI.AssemblyInfoInputs.cache

@@ -1,4 +1,6 @@
+using System.Text;
 using E_CommerceBacked.Controllers;
+using ECommerce.Lib.BE;
 using ECommerce.Lib.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http.Features;
@@ -13,10 +15,17 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddRazorPages();
+
 builder.Services.AddScoped<ECommerce.Lib.BLL.Product>(provider => {
-        return new ECommerce.Lib.BLL.Product(new ECommerce.Lib.DAL.Product());
-    })
-    .AddScoped<ECommerceEndPoints>();
+        return new ECommerce.Lib.BLL.Product(new ECommerce.Lib.DAL.Product()); }).AddScoped<ECommerceEndPoints>();
+
+builder.Services.Configure<FormatSettings>(builder.Configuration.GetSection("Formatting"));
+
+
+
+
+
+
 
 var app = builder.Build();
 
