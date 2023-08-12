@@ -487,7 +487,6 @@
     "net6.0": [
       "ECommerce.Lib.BE >= 1.0.0",
       "ECommerce.Lib.BLL >= 1.0.0",
-      "ECommerce.Lib.DAL >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -524,9 +523,6 @@
             },
             "E:\\N-Tier Architecture X Repository Pattern\\ECOM\\E-CommerceBacked\\ECommerce.Lib.BLL\\ECommerce.Lib.BLL.csproj": {
               "projectPath": "E:\\N-Tier Architecture X Repository Pattern\\ECOM\\E-CommerceBacked\\ECommerce.Lib.BLL\\ECommerce.Lib.BLL.csproj"
-            },
-            "E:\\N-Tier Architecture X Repository Pattern\\ECOM\\E-CommerceBacked\\ECommerce.Lib.DAL\\ECommerce.Lib.DAL.csproj": {
-              "projectPath": "E:\\N-Tier Architecture X Repository Pattern\\ECOM\\E-CommerceBacked\\ECommerce.Lib.DAL\\ECommerce.Lib.DAL.csproj"
             }
           }
         }

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ECommerce.Lib.DAL
 {
-    internal interface IBaseDAL<T>
+    public interface IBaseDAL<T>
     {
-        List<T> readAll();
-        T create(T entity);
-        T update(T entity);
-        T delete(T entity);
+        public  List<T> readAll();
+        public  T create(T entity);
+        public  T update(T entity);
+        public T delete(T entity);
 
 
     }

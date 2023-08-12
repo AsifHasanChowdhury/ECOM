@@ -10,7 +10,6 @@
         "dependencies": {
           "ECommerce.Lib.BE": "1.0.0",
           "ECommerce.Lib.BLL": "1.0.0",
-          "ECommerce.Lib.DAL": "1.0.0",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {

@@ -1,4 +1,7 @@
+using E_CommerceBacked.Controllers;
+using ECommerce.Lib.DAL;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http.Features;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +13,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<ECommerce.Lib.BLL.Product>(provider => {
+        return new ECommerce.Lib.BLL.Product(new ECommerce.Lib.DAL.Product());
+    })
+    .AddScoped<ECommerceEndPoints>();
 
 var app = builder.Build();
 

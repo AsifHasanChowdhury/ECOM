@@ -14,7 +14,6 @@
   <ItemGroup>
     <ProjectReference Include="..\ECommerce.Lib.BE\ECommerce.Lib.BE.csproj" />
     <ProjectReference Include="..\ECommerce.Lib.BLL\ECommerce.Lib.BLL.csproj" />
-    <ProjectReference Include="..\ECommerce.Lib.DAL\ECommerce.Lib.DAL.csproj" />
   </ItemGroup>
 
 </Project>

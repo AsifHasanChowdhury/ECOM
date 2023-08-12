@@ -14,15 +14,15 @@
             throw new NotImplementedException();
         }
 
-
         public BE.Product update(BE.Product entity)
         {
             throw new NotImplementedException();
         }
-
-        List<BE.Product> IBaseDAL<BE.Product> .readAll()
+        public List<BE.Product>  readAll()
         {
             throw new NotImplementedException();
         }
+
+       
     }
 }

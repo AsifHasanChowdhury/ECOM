@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Runtime.InteropServices.ComTypes;
+using ECommerce.Lib.BLL;
+using Microsoft.AspNetCore.Mvc;
 
 
 namespace E_CommerceBacked.Controllers
@@ -10,19 +12,23 @@ namespace E_CommerceBacked.Controllers
     public class ECommerceEndPoints : Controller
     {
         private readonly IConfiguration _configuration;
-
-        public ECommerceEndPoints(IConfiguration configuration)
+        private readonly ECommerce.Lib.BLL.Product _product;
+        public ECommerceEndPoints(IConfiguration configuration,
+            ECommerce.Lib.BLL.Product product)
         {
             _configuration = configuration;
+            _product= product;
         }
 
         [MTAThread]
         [HttpPost]
         [ProducesResponseType(200)]
         [Route("getAllProduct")]
-        public async Task<IActionResult> getAllProduct()
+        public async Task<List<ECommerce.Lib.BE.Product>> getAllProduct()
         {
-            return Ok("backend");
+            List<ECommerce.Lib.BE.Product> products = new();
+            products =_product.getAllData();
+            return products;
         }
 
         [HttpPost]
