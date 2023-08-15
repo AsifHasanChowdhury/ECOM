@@ -1,5 +1,6 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.Certificate;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
@@ -17,27 +18,39 @@ builder.Services.AddHttpClient("", client =>
 });
 
 
-builder.Services.AddAuthentication(
-        CertificateAuthenticationDefaults.AuthenticationScheme)
-    .AddCertificate();
+//builder.Services.AddAuthentication(
+//        CertificateAuthenticationDefaults.AuthenticationScheme)
+//    .AddCertificate();
 
-builder.Services.AddAuthentication(opt =>
+//builder.Services.AddAuthentication(opt =>
+//    {
+//        opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+//        opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+//    })
+//    .AddJwtBearer(options =>
+//    {
+//        options.TokenValidationParameters = new TokenValidationParameters
+//        {
+//            ValidateIssuer = true,
+//            ValidateAudience = true,
+//            ValidateLifetime = true,
+//            ValidateIssuerSigningKey = true,
+//            ValidIssuer = "https://localhost:44379",
+//            ValidAudience = "https://localhost:44379",
+//            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
+//        };
+//    });
+
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
     {
-        opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-        opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    })
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = "https://localhost:44379",
-            ValidAudience = "https://localhost:44379",
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
-        };
+        options.LoginPath = "/Home/login";
+        options.Cookie.Name = "RepositoryXN-Tier";
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+        options.SlidingExpiration = true;
+        options.AccessDeniedPath = "/Forbidden/";
+
     });
 
 builder.Services.AddCors(options =>
@@ -65,16 +78,16 @@ if (!app.Environment.IsDevelopment())
 
 app.UseAuthentication();
 
-
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(name: "test", pattern: "{controller=Main}/{action=Index}/{id?}");
 
 app.Run();

@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ECommerce.Lib.DAL/1.0.0": {
+        "dependencies": {
+          "ECommerce.Lib.BE": "1.0.0"
+        },
+        "runtime": {
+          "ECommerce.Lib.DAL.dll": {}
+        }
+      },
+      "ECommerce.Lib.BE/1.0.0": {
+        "runtime": {
+          "ECommerce.Lib.BE.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ECommerce.Lib.DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ECommerce.Lib.BE/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,10 +1,18 @@
 ﻿using ECommerceUI.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Net;
 using System.Net.Http.Headers;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace ECommerceUI.Controllers
 {
+    //[Authorize(Roles = "AsifHasan")]
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -26,6 +34,89 @@ namespace ECommerceUI.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult login()
+        {
+            return View(new ECommerce.Lib.BE.login());
+        }
+
+        [HttpPost]
+        public IActionResult login(ECommerce.Lib.BE.login login)
+        {
+            //return View();
+
+            if (login.email == null || login.password == null)
+            {
+                return View(new ECommerce.Lib.BE.login());
+            }
+
+           
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, login.email),
+                new Claim("FullName", login.password),
+                new Claim(ClaimTypes.Role,"Admin"),
+            };
+
+            var claimsIdentity = new ClaimsIdentity(
+                claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+            var authProperties = new AuthenticationProperties
+            {
+                //AllowRefresh = <bool>,
+                // Refreshing the authentication session should be allowed.
+
+                ExpiresUtc = DateTimeOffset.UtcNow.AddSeconds(5000000),
+                // The time at which the authentication ticket expires. A 
+                // value set here overrides the ExpireTimeSpan option of 
+                // CookieAuthenticationOptions set with AddCookie.
+
+                //IsPersistent = true,
+                // Whether the authentication session is persisted across 
+                // multiple requests. When used with cookies, controls
+                // whether the cookie's lifetime is absolute (matching the
+                // lifetime of the authentication ticket) or session-based.
+
+                //IssuedUtc = <DateTimeOffset>,
+                // The time at which the authentication ticket was issued.
+
+                //RedirectUri = <string>
+                // The full path or absolute URI to be used as an http 
+                // redirect response value.
+            };
+
+
+
+            HttpContext.SignInAsync(
+            CookieAuthenticationDefaults.AuthenticationScheme,
+            new ClaimsPrincipal(claimsIdentity),
+            authProperties);
+
+
+            return RedirectToAction("Index", "Main");
+
+        }
+
+
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("login", "Home");
+
+        }
+
+
+
+
+
+
+
+
+
+
+
 
 
         [HttpPost]
