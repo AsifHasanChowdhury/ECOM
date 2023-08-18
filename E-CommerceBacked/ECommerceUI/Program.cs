@@ -1,4 +1,5 @@
 using System.Text;
+using ECommerce.Lib.BE;
 using Microsoft.AspNetCore.Authentication.Certificate;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -16,6 +17,9 @@ builder.Services.AddHttpClient("", client =>
     client.Timeout=TimeSpan.FromSeconds(5);
     // You can add other configurations here
 });
+
+
+builder.Services.Configure<List<ECommerce.Lib.BE.Product>>(builder.Configuration.GetSection("productList"));
 
 
 //builder.Services.AddAuthentication(
@@ -86,8 +90,10 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.MapControllerRoute(name: "test", pattern: "{controller=Main}/{action=Index}/{id?}");
+app.MapControllerRoute(name: "default", pattern: "{controller=Main}/{action=Index}/{id?}");
+
+app.MapControllerRoute(name: "secondary", pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
 app.Run();
