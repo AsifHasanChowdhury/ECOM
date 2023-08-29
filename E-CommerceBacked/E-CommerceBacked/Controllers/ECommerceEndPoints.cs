@@ -48,7 +48,7 @@ namespace E_CommerceBacked.Controllers
         [HttpPost]
         [ProducesResponseType(200)]
         [Route("getProductbyID")]
-        public async Task<ECommerce.Lib.BE.Product> getProductbyID(string securityToken)
+        public async Task<ECommerce.Lib.BE.Product> getProductbyID([FromBody] string id)
         {
 
             ECommerce.Lib.BE.Product product = new();
