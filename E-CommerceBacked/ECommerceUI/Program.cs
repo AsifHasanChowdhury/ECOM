@@ -12,12 +12,15 @@ var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+#region backend Injection APICall
 builder.Services.AddHttpClient("", client =>
 {
     client.BaseAddress = new Uri("https://localhost:7030");
     client.Timeout=TimeSpan.FromSeconds(5);
     // You can add other configurations here
 });
+
+#endregion
 
 #region DependencyInjection
 

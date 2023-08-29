@@ -8,11 +8,12 @@ using System.Net.Http.Headers;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
+using System.Web.Helpers;
 
 namespace ECommerceUI.Controllers
 {
     //[Authorize(Roles = "AsifHasan")]
-
+    //Sometimes need to rebuild to reAssign reference.
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -66,24 +67,11 @@ namespace ECommerceUI.Controllers
             {
                 //AllowRefresh = <bool>,
                 // Refreshing the authentication session should be allowed.
-
                 ExpiresUtc = DateTimeOffset.UtcNow.AddSeconds(5000000),
-                // The time at which the authentication ticket expires. A 
-                // value set here overrides the ExpireTimeSpan option of 
-                // CookieAuthenticationOptions set with AddCookie.
-
                 //IsPersistent = true,
-                // Whether the authentication session is persisted across 
-                // multiple requests. When used with cookies, controls
-                // whether the cookie's lifetime is absolute (matching the
-                // lifetime of the authentication ticket) or session-based.
-
                 //IssuedUtc = <DateTimeOffset>,
                 // The time at which the authentication ticket was issued.
-
                 //RedirectUri = <string>
-                // The full path or absolute URI to be used as an http 
-                // redirect response value.
             };
 
 
@@ -98,7 +86,7 @@ namespace ECommerceUI.Controllers
 
         }
 
-
+        [HttpPost]
         public IActionResult Logout()
         {
             HttpContext.SignOutAsync(
@@ -106,18 +94,7 @@ namespace ECommerceUI.Controllers
             return RedirectToAction("login", "Home");
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
         [HttpPost]
         [ProducesResponseType(200)]
@@ -150,9 +127,21 @@ namespace ECommerceUI.Controllers
 
         [HttpPost]
         [Route("getProductbyID")]
-        public async Task<string> getProductbyID()
+        public async Task<IActionResult> getProductbyID(string id)
         {
-            return "This is juicy";
+            ECommerce.Lib.BE.Product product = new();
+            string securityToken = "1234";
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync("Products/getProductbyID", securityToken);
+
+            if (response.IsSuccessStatusCode)
+            {
+                string responseBody = await response.Content.ReadAsStringAsync();
+                return Ok(responseBody);
+            }
+          
+                // Handle error scenarios
+            return StatusCode((int)response.StatusCode, "API call failed");
+          
         }
 
         [HttpPost]

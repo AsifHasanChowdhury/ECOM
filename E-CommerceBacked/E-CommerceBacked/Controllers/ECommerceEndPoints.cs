@@ -22,15 +22,15 @@ namespace E_CommerceBacked.Controllers
             _product= product;
         }
 
-        [MTAThread]
+        
         [HttpPost]
         [ProducesResponseType(200)]
         [Route("getAllProduct")]
         public async Task<List<ECommerce.Lib.BE.Product>> getAllProduct()
         {
             List<ECommerce.Lib.BE.Product> products = new();
-            IdentityOptions identityOptions = new();
-            IdentityUser identityUser = new();
+            IdentityOptions identityOptions = new(); //study this
+            IdentityUser identityUser = new(); //study this
             
             products =_product.getAllData();
             return products;
@@ -46,11 +46,15 @@ namespace E_CommerceBacked.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(200)]
         [Route("getProductbyID")]
-        public async Task<string> getProductbyID()
+        public async Task<ECommerce.Lib.BE.Product> getProductbyID(string securityToken)
         {
-            return "This is juicy";
+
+            ECommerce.Lib.BE.Product product = new();
+            return product;
         }
+
 
         [HttpPost]
         [Route("updateBatchProductDetails")]
