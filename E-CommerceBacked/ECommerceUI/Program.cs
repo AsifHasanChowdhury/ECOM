@@ -3,6 +3,7 @@ using ECommerce.Lib.BE;
 using Microsoft.AspNetCore.Authentication.Certificate;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,33 +19,58 @@ builder.Services.AddHttpClient("", client =>
     // You can add other configurations here
 });
 
+#region DependencyInjection
 
 builder.Services.Configure<List<ECommerce.Lib.BE.Product>>(builder.Configuration.GetSection("productList"));
 
+#endregion
 
-//builder.Services.AddAuthentication(
-//        CertificateAuthenticationDefaults.AuthenticationScheme)
-//    .AddCertificate();
+#region Cors
+//if we don't setup cors then browser don't Allow request from server that has no cors setup
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy =>
+        {
+            policy.WithOrigins("*"); // Can be defined spefic API domain 
+            policy.AllowAnyHeader(); 
+            policy.WithMethods("GET","POST","PUT");
+            //policy.WithHeaders(); // need specific header value setup by Angular
+            //policy.AnyMethods(); // Allow Any Httpget,post,put method
 
-//builder.Services.AddAuthentication(opt =>
-//    {
-//        opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-//        opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-//    })
-//    .AddJwtBearer(options =>
-//    {
-//        options.TokenValidationParameters = new TokenValidationParameters
-//        {
-//            ValidateIssuer = true,
-//            ValidateAudience = true,
-//            ValidateLifetime = true,
-//            ValidateIssuerSigningKey = true,
-//            ValidIssuer = "https://localhost:44379",
-//            ValidAudience = "https://localhost:44379",
-//            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
-//        };
-//    });
+        });
 
+});
+
+#endregion
+
+#region JWT_Authetication
+
+builder.Services.AddAuthentication(
+        CertificateAuthenticationDefaults.AuthenticationScheme)
+    .AddCertificate();
+
+builder.Services.AddAuthentication(opt =>
+    {
+        opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = "https://localhost:44379",
+            ValidAudience = "https://localhost:44379",
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
+        };
+    });
+#endregion
+
+#region Cookie Authentication
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
@@ -57,18 +83,8 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
     });
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-        policy =>
-        {
-            policy.WithOrigins("*");
-            policy.AllowAnyHeader();
-            policy.AllowAnyMethod();
+#endregion
 
-        });
-
-});
 
 var app = builder.Build();
 

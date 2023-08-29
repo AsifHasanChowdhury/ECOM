@@ -4,6 +4,7 @@ using ECommerce.Lib.BE;
 using ECommerce.Lib.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http.Features;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,15 +17,30 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddRazorPages();
 
-builder.Services.AddScoped<ECommerce.Lib.BLL.Product>(provider => {
-        return new ECommerce.Lib.BLL.Product(new ECommerce.Lib.DAL.Product()); }).AddScoped<ECommerceEndPoints>();
+
+
+
+//builder.Services
+//    .AddScoped<ECommerce.Lib.BLL.Product>
+//        (p =>
+//            { return new ECommerce.Lib.BLL.Product(new ECommerce.Lib.DAL.Product()); })
+//    .AddScoped<ECommerceEndPoints>();
+
+
+builder.Services
+    .AddScoped<ECommerce.Lib.BLL.Product>
+    (p=>{
+        return new ECommerce.Lib.BLL.Product(new ECommerce.Lib.DAL.Product());
+    });
+   
+
+
+//builder.Services
+//    .AddScoped<ECommerce.Lib.BLL.Product, ECommerce.Lib.BLL.Product>()
+//    .AddScoped<ECommerceEndPoints>();
+
 
 builder.Services.Configure<FormatSettings>(builder.Configuration.GetSection("Formatting"));
-
-
-
-
-
 
 
 var app = builder.Build();

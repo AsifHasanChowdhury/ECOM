@@ -1,5 +1,7 @@
 ﻿using System.Runtime.InteropServices.ComTypes;
 using ECommerce.Lib.BLL;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -27,11 +29,15 @@ namespace E_CommerceBacked.Controllers
         public async Task<List<ECommerce.Lib.BE.Product>> getAllProduct()
         {
             List<ECommerce.Lib.BE.Product> products = new();
+            IdentityOptions identityOptions = new();
+            IdentityUser identityUser = new();
+            
             products =_product.getAllData();
             return products;
         }
 
         [HttpPost]
+        [Authorize(Policy = "IsAdminClaimAccess")]
         [Route("getAllProductbyAdmin")]
         public async Task<IActionResult> getAllProductbyAdmin()
         {

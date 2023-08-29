@@ -268,3 +268,13 @@ E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bi
 E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\ECommerce.Lib.BE.dll
 E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\ECommerce.Lib.BE.pdb
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\System.Web.Mvc.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\System.Web.Razor.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\System.Web.Http.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\System.Web.Helpers.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\System.Web.WebPages.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

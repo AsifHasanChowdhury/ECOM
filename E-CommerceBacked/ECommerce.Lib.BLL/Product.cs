@@ -9,8 +9,7 @@
             
         }
         
-      
-        public  List<Lib.BE.Product> getAllData()
+        public List<Lib.BE.Product> getAllData()
         {
             return product.readAll();
         }

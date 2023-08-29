@@ -1,18 +1,19 @@
-﻿using System.Web.Http.Filters;
+﻿using System.Web.Mvc;
+using ActionFilterAttribute = System.Web.Http.Filters.ActionFilterAttribute;
 
 namespace ECommerce.Lib.BE.Util;
-using Microsoft.AspNetCore.Mvc.Filters;
 
-public class ExceptionHelper:ActionFilterAttribute
+public class ExceptionHelper: ActionFilterAttribute
 
 {
-    public override void OnActionExecuting(ActionExecutingContext context)
+    public void OnActionExecuting(ActionExecutingContext context)
     {
         // Code to execute before the action method is called
         // For example, logging information about the incoming request
+        int x = 2;
     }
 
-    public override void OnActionExecuted(ActionExecutedContext context)
+    public void OnActionExecuted(ActionExecutedContext context)
     {
         // Code to execute after the action method has been called
         // For example, logging information about the result or modifying the result
