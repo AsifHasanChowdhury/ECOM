@@ -5,21 +5,24 @@ using System.Data;
 using System.Runtime.InteropServices.ComTypes;
 using ECommerce.Lib.BE.Util;
 using Microsoft.Extensions.Options;
+using System.Net.Http;
 
 namespace ECommerceUI.Controllers
 {
-    [Authorize(Roles="Admin")]
+    [Authorize(Roles = "Admin")]
     public class MainController : Controller
     {
         private readonly List<ECommerce.Lib.BE.Product> productList;
-        public MainController(IOptions<List<ECommerce.Lib.BE.Product>> prdocutsList)
+
+        private readonly HttpClient _httpClient;
+        public MainController(IOptions<List<ECommerce.Lib.BE.Product>> prdocutsList, HttpClient httpClient)
         {
             this.productList = prdocutsList.Value;
-
+            _httpClient = httpClient;
         }
 
 
-        [ExceptionHelper]
+        //[ExceptionHelper]
         //[EnableCors("AllowsAll")]
         public IActionResult Index()
         {
@@ -46,6 +49,49 @@ namespace ECommerceUI.Controllers
             productList.Add(product2);
 
             return View(productList);
+        }
+
+
+
+        [HttpPost]
+        [ProducesResponseType(200)]
+        [Route("getAllProduct")]
+        public async Task<IActionResult> getAllProduct()
+        {
+            string securityToken = "1234";
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync("Products/getAllProduct", securityToken);
+
+            if (response.IsSuccessStatusCode)
+            {
+                string responseBody = await response.Content.ReadAsStringAsync();
+                return Ok(responseBody);
+            }
+            else
+            {
+                // Handle error scenarios
+                return StatusCode((int)response.StatusCode, "API call failed");
+            }
+            return Ok(400);
+        }
+
+
+        [HttpPost]
+        [Route("getProductbyID")]
+        public async Task<IActionResult> getProductbyID(string id)
+        {
+            ECommerce.Lib.BE.Product product = new();
+            string securityToken = "1234";
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync("Products/getProductbyID", securityToken);
+
+            if (response.IsSuccessStatusCode)
+            {
+                string responseBody = await response.Content.ReadAsStringAsync();
+                return Ok(responseBody);
+            }
+
+            // Handle error scenarios
+            return StatusCode((int)response.StatusCode, "API call failed");
+
         }
     }
 }
