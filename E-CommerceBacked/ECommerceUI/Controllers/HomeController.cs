@@ -12,7 +12,7 @@ using System.Web.Helpers;
 
 namespace ECommerceUI.Controllers
 {
-    //[Authorize(Roles = "AsifHasan")]
+
     //Sometimes need to rebuild to reAssign reference.
     public class HomeController : Controller
     {
@@ -26,9 +26,10 @@ namespace ECommerceUI.Controllers
             _httpClient = httpClient;
         }
 
-        public IActionResult Index()
+        public  IActionResult Index()
         {
-            return View();
+            return View(); // return view is looking for page named
+                           // Index.cshtml that Aligning with method name
         }
 
         public IActionResult Privacy()
@@ -68,7 +69,7 @@ namespace ECommerceUI.Controllers
                 //AllowRefresh = <bool>,
                 // Refreshing the authentication session should be allowed.
                 ExpiresUtc = DateTimeOffset.UtcNow.AddSeconds(5000000),
-                //IsPersistent = true,
+                IsPersistent = true,
                 //IssuedUtc = <DateTimeOffset>,
                 // The time at which the authentication ticket was issued.
                 //RedirectUri = <string>
@@ -86,11 +87,22 @@ namespace ECommerceUI.Controllers
 
         }
 
-        [HttpPost]
+
+        [HttpGet]
         public IActionResult Logout()
         {
             HttpContext.SignOutAsync(
                 CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("login", "Home");
+
+        }
+
+
+        [HttpPost]
+        public IActionResult Logout(ECommerce.Lib.BE.login login)
+        {
+            //HttpContext.SignOutAsync(
+            //    CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("login", "Home");
 
         }
@@ -117,13 +129,6 @@ namespace ECommerceUI.Controllers
             return Ok(400);
         }
 
-        [HttpPost]
-        [Route("getAllProductbyAdmin")]
-        public async Task<IActionResult> getAllProductbyAdmin()
-        {
-            return Ok(200);
-
-        }
 
         [HttpPost]
         [Route("getProductbyID")]
@@ -138,11 +143,21 @@ namespace ECommerceUI.Controllers
                 string responseBody = await response.Content.ReadAsStringAsync();
                 return Ok(responseBody);
             }
-          
-                // Handle error scenarios
+
+            // Handle error scenarios
             return StatusCode((int)response.StatusCode, "API call failed");
-          
+
         }
+
+
+        [HttpPost]
+        [Route("getAllProductbyAdmin")]
+        public async Task<IActionResult> getAllProductbyAdmin()
+        {
+            return Ok(200);
+
+        }
+
 
         [HttpPost]
         [Route("updateBatchProductDetails")]

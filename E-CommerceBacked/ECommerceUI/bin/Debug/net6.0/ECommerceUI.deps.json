@@ -11,7 +11,9 @@
           "ECommerce.Lib.BE": "1.0.0",
           "Microsoft.AspNetCore.Authentication.Certificate": "6.0.21",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.21",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16",
+          "NLog.Web.AspNetCore": "5.3.3",
+          "Serilog": "3.0.1"
         },
         "runtime": {
           "ECommerceUI.dll": {}
@@ -1175,6 +1177,11 @@
           }
         }
       },
+      "Microsoft.Extensions.Configuration.Abstractions/6.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "6.0.0"
+        }
+      },
       "Microsoft.Extensions.DependencyInjection/6.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
@@ -1182,6 +1189,15 @@
         }
       },
       "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {},
+      "Microsoft.Extensions.Logging/6.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "6.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Options": "6.0.0",
+          "System.Diagnostics.DiagnosticSource": "6.0.0"
+        }
+      },
       "Microsoft.Extensions.Logging.Abstractions/6.0.0": {},
       "Microsoft.Extensions.Options/6.0.0": {
         "dependencies": {
@@ -1466,6 +1482,38 @@
           }
         }
       },
+      "NLog/5.2.3": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.2.3.1999"
+          }
+        }
+      },
+      "NLog.Extensions.Logging/5.3.3": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "NLog": "5.2.3"
+        },
+        "runtime": {
+          "lib/net6.0/NLog.Extensions.Logging.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.3.3.381"
+          }
+        }
+      },
+      "NLog.Web.AspNetCore/5.3.3": {
+        "dependencies": {
+          "NLog.Extensions.Logging": "5.3.3"
+        },
+        "runtime": {
+          "lib/net6.0/NLog.Web.AspNetCore.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.3.3.940"
+          }
+        }
+      },
       "NuGet.Common/6.6.1": {
         "dependencies": {
           "NuGet.Frameworks": "6.6.1"
@@ -1615,6 +1663,14 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
+      "Serilog/3.0.1": {
+        "runtime": {
+          "lib/net6.0/Serilog.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "3.0.1.0"
+          }
+        }
+      },
       "System.AppContext/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -1791,13 +1847,9 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Diagnostics.DiagnosticSource/4.3.0": {
+      "System.Diagnostics.DiagnosticSource/6.0.0": {
         "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Tracing": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Threading": "4.3.0"
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         }
       },
       "System.Diagnostics.Tools/4.3.0": {
@@ -1972,7 +2024,7 @@
           "Microsoft.NETCore.Platforms": "1.1.0",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
-          "System.Diagnostics.DiagnosticSource": "4.3.0",
+          "System.Diagnostics.DiagnosticSource": "6.0.0",
           "System.Diagnostics.Tracing": "4.3.0",
           "System.Globalization": "4.3.0",
           "System.Globalization.Extensions": "4.3.0",
@@ -2970,6 +3022,13 @@
       "path": "microsoft.extensions.caching.memory/6.0.1",
       "hashPath": "microsoft.extensions.caching.memory.6.0.1.nupkg.sha512"
     },
+    "Microsoft.Extensions.Configuration.Abstractions/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qWzV9o+ZRWq+pGm+1dF+R7qTgTYoXvbyowRoBxQJGfqTpqDun2eteerjRQhq5PQ/14S+lqto3Ft4gYaRyl4rdQ==",
+      "path": "microsoft.extensions.configuration.abstractions/6.0.0",
+      "hashPath": "microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.DependencyInjection/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -2983,6 +3042,13 @@
       "sha512": "sha512-xlzi2IYREJH3/m6+lUrQlujzX8wDitm4QGnUu6kUXTQAWPuZY8i+ticFJbzfqaetLA6KR/rO6Ew/HuYD+bxifg==",
       "path": "microsoft.extensions.dependencyinjection.abstractions/6.0.0",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eIbyj40QDg1NDz0HBW0S5f3wrLVnKWnDJ/JtZ+yJDFnDj90VoPuoPmFkeaXrtu+0cKm5GRAwoDf+dBWXK0TUdg==",
+      "path": "microsoft.extensions.logging/6.0.0",
+      "hashPath": "microsoft.extensions.logging.6.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging.Abstractions/6.0.0": {
       "type": "package",
@@ -3159,6 +3225,27 @@
       "path": "newtonsoft.json.bson/1.0.1",
       "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512"
     },
+    "NLog/5.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rHTNRtQF5qYqLutSR9ldUWXglKym/KA1R6GKw4JtDvza8i5+kgfmeKH75Ccn1noeJIOjHLXorphMxKk3EiN2tg==",
+      "path": "nlog/5.2.3",
+      "hashPath": "nlog.5.2.3.nupkg.sha512"
+    },
+    "NLog.Extensions.Logging/5.3.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-o3V1oUr0izjhU1djuVqN5JdmNUGmunTs3Amjhumt/nxva8kG9QWjOdba+ciwkP//QOjv+KkGklZtI9o4qz50hQ==",
+      "path": "nlog.extensions.logging/5.3.3",
+      "hashPath": "nlog.extensions.logging.5.3.3.nupkg.sha512"
+    },
+    "NLog.Web.AspNetCore/5.3.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ub8LOAbIGIPtv9nMAdZXlxUvszau6p2Svmeo8mhJFD+PQDMnI6PFc5IID1Jj3c1Lv8sxKVL7vRCsaWdTrmnrFw==",
+      "path": "nlog.web.aspnetcore/5.3.3",
+      "hashPath": "nlog.web.aspnetcore.5.3.3.nupkg.sha512"
+    },
     "NuGet.Common/6.6.1": {
       "type": "package",
       "serviceable": true,
@@ -3334,6 +3421,13 @@
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512"
     },
+    "Serilog/3.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-E4UmOQ++eNJax1laE+lws7E3zbhKgHsGJbO7ra0yE5smUh+5FfUPIKKBxM3MO1tK4sgpQke6/pLReDxIc/ggNw==",
+      "path": "serilog/3.0.1",
+      "hashPath": "serilog.3.0.1.nupkg.sha512"
+    },
     "System.AppContext/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -3432,12 +3526,12 @@
       "path": "system.diagnostics.debug/4.3.0",
       "hashPath": "system.diagnostics.debug.4.3.0.nupkg.sha512"
     },
-    "System.Diagnostics.DiagnosticSource/4.3.0": {
+    "System.Diagnostics.DiagnosticSource/6.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tD6kosZnTAGdrEa0tZSuFyunMbt/5KYDnHdndJYGqZoNy00XVXyACd5d6KnE1YgYv3ne2CjtAfNXo/fwEhnKUA==",
-      "path": "system.diagnostics.diagnosticsource/4.3.0",
-      "hashPath": "system.diagnostics.diagnosticsource.4.3.0.nupkg.sha512"
+      "sha512": "sha512-frQDfv0rl209cKm1lnwTgFPzNigy2EKk1BS3uAvHvlBVKe5cymGyHO+Sj+NLv5VF/AhHsqPIUUwya5oV4CHMUw==",
+      "path": "system.diagnostics.diagnosticsource/6.0.0",
+      "hashPath": "system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512"
     },
     "System.Diagnostics.Tools/4.3.0": {
       "type": "package",

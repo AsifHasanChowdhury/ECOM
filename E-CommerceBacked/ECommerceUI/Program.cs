@@ -1,16 +1,27 @@
 using System.Text;
 using ECommerce.Lib.BE;
+using ECommerceUI.Controllers;
 using Microsoft.AspNetCore.Authentication.Certificate;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+#region logging
+
+//Log.Logger = new LoggerConfiguration()
+//                        .MinimumLevel.Information(Debu)
+//                        .WriteTo("logs/ECommerceLog.txt")
+//                        .CreateLogger();
+
+#endregion
 
 #region backend Injection APICall
 builder.Services.AddHttpClient("", client =>
@@ -19,6 +30,12 @@ builder.Services.AddHttpClient("", client =>
     client.Timeout=TimeSpan.FromSeconds(5);
     // You can add other configurations here
 });
+
+//builder.Services.AddHttpClient("client2", client =>
+//{
+//    client.BaseAddress = new Uri("https://localhost:7030");
+//    client.Timeout = TimeSpan.FromSeconds(5);
+//});
 
 #endregion
 
@@ -37,9 +54,9 @@ builder.Services.AddCors(options =>
         {
             policy.WithOrigins("*"); // Can be defined spefic API domain 
             policy.AllowAnyHeader(); 
-            policy.WithMethods("GET","POST","PUT");
-            //policy.WithHeaders(); // need specific header value setup by Angular
-            //policy.AnyMethods(); // Allow Any Httpget,post,put method
+           // policy.WithMethods("GET","POST","PUT");
+            policy.WithHeaders(); // need specific header value setup by Angular
+            policy.AllowAnyMethod(); // Allow Any Httpget,post,put method
 
         });
 
@@ -53,24 +70,24 @@ builder.Services.AddAuthentication(
         CertificateAuthenticationDefaults.AuthenticationScheme)
     .AddCertificate();
 
-builder.Services.AddAuthentication(opt =>
-    {
-        opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-        opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    })
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = "https://localhost:44379",
-            ValidAudience = "https://localhost:44379",
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
-        };
-    });
+//builder.Services.AddAuthentication(opt =>
+//    {
+//        opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+//        opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+//    })
+//    .AddJwtBearer(options =>
+//    {
+//        options.TokenValidationParameters = new TokenValidationParameters
+//        {
+//            ValidateIssuer = true,
+//            ValidateAudience = true,
+//            ValidateLifetime = true,
+//            ValidateIssuerSigningKey = true,
+//            ValidIssuer = "https://localhost:44379",
+//            ValidAudience = "https://localhost:44379",
+//            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
+//        };
+//    });
 #endregion
 
 #region Cookie Authentication
@@ -109,10 +126,8 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-
 app.MapControllerRoute(name: "default", pattern: "{controller=Main}/{action=Index}/{id?}");
 
 app.MapControllerRoute(name: "secondary", pattern: "{controller=Home}/{action=Index}/{id?}");
-
 
 app.Run();

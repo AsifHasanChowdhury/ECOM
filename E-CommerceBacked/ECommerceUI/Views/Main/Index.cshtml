@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ECommerce.Lib.BE.Product>
+﻿@using Microsoft.CodeAnalysis.Scripting
+@model IEnumerable<ECommerce.Lib.BE.Product>
 
 @{
     ViewData["Title"] = "Index";
@@ -11,33 +12,33 @@
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.productName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.productCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.productDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.productCategory)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.productListingDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.productCount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.imagePath)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.productName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.productCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.productDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.productCategory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.productListingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.productCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imagePath)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+    @foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.productName)
@@ -60,12 +61,27 @@
             <td>
                 @Html.DisplayFor(modelItem => item.imagePath)
             </td>
-            <td>
+            @*<td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
+            </td>*@
         </tr>
-}
+    }
+    
+@*    @RenderSection("Scripts", required: false)
+*@
     </tbody>
 </table>
+
+@{
+    // Other Razor code here
+    
+    // Define a script section
+@section Scripts {
+    <script>
+            // Your JavaScript code here
+            console.log('Hello from JavaScript in .cshtml!');
+    </script>
+}
+}

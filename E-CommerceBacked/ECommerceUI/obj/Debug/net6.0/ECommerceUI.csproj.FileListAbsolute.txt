@@ -278,3 +278,7 @@ E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bi
 E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\System.Web.WebPages.dll
 E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
 E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\NLog.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+E:\N-Tier Architecture X Repository Pattern\ECOM\E-CommerceBacked\ECommerceUI\bin\Debug\net6.0\Serilog.dll

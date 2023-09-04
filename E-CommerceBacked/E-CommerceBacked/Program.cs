@@ -49,7 +49,17 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Your API Name v1");
+
+        // Customize the Swagger UI page, e.g., change the title
+        c.DocumentTitle = "Custom Swagger UI Title";
+
+        // Set a custom URL for the Swagger UI page
+        c.RoutePrefix = "swagger";
+    });
 } 
 
 app.UseHttpsRedirection();
