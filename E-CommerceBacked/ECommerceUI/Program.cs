@@ -4,10 +4,12 @@ using ECommerceUI.Controllers;
 using Microsoft.AspNetCore.Authentication.Certificate;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
 
+//Front END Project
 var builder = WebApplication.CreateBuilder(args);
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
@@ -30,6 +32,7 @@ builder.Services.AddHttpClient("", client =>
     client.Timeout=TimeSpan.FromSeconds(5);
     // You can add other configurations here
 });
+//I tried to call multiple API source
 
 //builder.Services.AddHttpClient("client2", client =>
 //{
@@ -105,6 +108,11 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 #endregion
 
+
+#region IdentityUser
+builder.Services.AddHttpContextAccessor(); // Required for SignInManager
+builder.Services.AddScoped<SignInManager<ApplicationUser>>();
+#endregion
 
 var app = builder.Build();
 

@@ -1,11 +1,7 @@
-*.vsidx
-
 *.pdb
-
-*suo
-
+*.suo
 *.dll
-
-/bin
-
+.vs
+bin
 /obj
+/E-CommerceBacked/.vs/E-CommerceBacked/v17/*.suo

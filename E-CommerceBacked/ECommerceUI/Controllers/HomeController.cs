@@ -59,6 +59,7 @@ namespace ECommerceUI.Controllers
                 new Claim(ClaimTypes.Name, login.email),
                 new Claim("FullName", login.password),
                 new Claim(ClaimTypes.Role,"Admin"),
+                new Claim("AdminClaim", "true"),
             };
 
             var claimsIdentity = new ClaimsIdentity(
@@ -98,14 +99,6 @@ namespace ECommerceUI.Controllers
         }
 
 
-        [HttpPost]
-        public IActionResult Logout(ECommerce.Lib.BE.login login)
-        {
-            //HttpContext.SignOutAsync(
-            //    CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("login", "Home");
-
-        }
         
 
         [HttpPost]
