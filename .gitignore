@@ -5,3 +5,7 @@
 *suo
 
 *.dll
+
+/bin
+
+/obj
