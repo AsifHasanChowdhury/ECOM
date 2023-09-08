@@ -3,5 +3,5 @@
 *.dll
 .vs
 bin
-/obj
+\obj
 /E-CommerceBacked/.vs/E-CommerceBacked/v17/*.suo

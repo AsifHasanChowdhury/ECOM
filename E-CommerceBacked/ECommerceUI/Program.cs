@@ -28,9 +28,9 @@ builder.Services.AddControllersWithViews();
 #region backend Injection APICall
 builder.Services.AddHttpClient("", client =>
 {
-    client.BaseAddress = new Uri("https://localhost:7030");
-    client.Timeout=TimeSpan.FromSeconds(5);
-    // You can add other configurations here
+	client.BaseAddress = new Uri("https://localhost:7030");
+	client.Timeout=TimeSpan.FromSeconds(5);
+	// You can add other configurations here
 });
 //I tried to call multiple API source
 
@@ -52,16 +52,16 @@ builder.Services.Configure<List<ECommerce.Lib.BE.Product>>(builder.Configuration
 //if we don't setup cors then browser don't Allow request from server that has no cors setup
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-        policy =>
-        {
-            policy.WithOrigins("*"); // Can be defined spefic API domain 
-            policy.AllowAnyHeader(); 
-           // policy.WithMethods("GET","POST","PUT");
-            policy.WithHeaders(); // need specific header value setup by Angular
-            policy.AllowAnyMethod(); // Allow Any Httpget,post,put method
+	options.AddPolicy(name: MyAllowSpecificOrigins,
+		policy =>
+		{
+			policy.WithOrigins("*"); // Can be defined spefic API domain 
+			policy.AllowAnyHeader(); 
+		   // policy.WithMethods("GET","POST","PUT");
+			policy.WithHeaders(); // need specific header value setup by Angular
+			policy.AllowAnyMethod(); // Allow Any Httpget,post,put method
 
-        });
+		});
 
 });
 
@@ -70,8 +70,8 @@ builder.Services.AddCors(options =>
 #region JWT_Authetication
 
 builder.Services.AddAuthentication(
-        CertificateAuthenticationDefaults.AuthenticationScheme)
-    .AddCertificate();
+		CertificateAuthenticationDefaults.AuthenticationScheme)
+	.AddCertificate();
 
 //builder.Services.AddAuthentication(opt =>
 //    {
@@ -96,22 +96,21 @@ builder.Services.AddAuthentication(
 #region Cookie Authentication
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options =>
-    {
-        options.LoginPath = "/Home/login";
-        options.Cookie.Name = "RepositoryXN-Tier";
-        options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
-        options.SlidingExpiration = true;
-        options.AccessDeniedPath = "/Forbidden/";
+	.AddCookie(options =>
+	{
+		options.LoginPath = "/Home/login";
+		options.Cookie.Name = "RepositoryXN-Tier";
+		options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+		options.SlidingExpiration = true;
+		options.AccessDeniedPath = "/Forbidden/";
 
-    });
+	});
 
 #endregion
 
 
 #region IdentityUser
 builder.Services.AddHttpContextAccessor(); // Required for SignInManager
-builder.Services.AddScoped<SignInManager<ApplicationUser>>();
 #endregion
 
 var app = builder.Build();
@@ -119,9 +118,9 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+	app.UseExceptionHandler("/Home/Error");
+	// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+	app.UseHsts();
 }
 
 app.UseAuthentication();

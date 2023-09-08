@@ -9,6 +9,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
 using System.Web.Helpers;
+using Microsoft.AspNetCore.Hosting;
 
 namespace ECommerceUI.Controllers
 {
@@ -19,6 +20,7 @@ namespace ECommerceUI.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
         public HomeController(ILogger<HomeController> logger, HttpClient httpClient)
         {
@@ -254,6 +256,42 @@ namespace ECommerceUI.Controllers
         {
             return null;
 
+        }
+
+        /// <summary>
+        /// File Upload Lesson
+        /// </summary>
+        /// <param name="imageFile"></param>
+        /// <returns></returns>
+
+        [HttpPost("UploadImage")]
+        public async Task<IActionResult> UploadImage(IFormFile imageFile)
+        {
+            if (imageFile != null && imageFile.Length > 0)
+            {
+                try
+                {
+                    string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images");
+                    string uniqueFileName = Guid.NewGuid().ToString() + "_" + imageFile.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await imageFile.CopyToAsync(fileStream);
+                    }
+
+                    // Save the 'filePath' in your database or return it to the client.
+                    return Ok(new { imagePath = "/images/" + uniqueFileName });
+                }
+                catch (Exception ex)
+                {
+                    return StatusCode(500, $"Internal server error: {ex.Message}");
+                }
+            }
+            else
+            {
+                return BadRequest("No image file was uploaded.");
+            }
         }
 
 

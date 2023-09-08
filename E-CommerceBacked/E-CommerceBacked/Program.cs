@@ -1,9 +1,11 @@
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using E_CommerceBacked.Controllers;
 using ECommerce.Lib.BE;
 using ECommerce.Lib.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http.Features;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +20,16 @@ builder.Services.AddControllers();
 builder.Services.AddRazorPages();
 
 
+var configuration = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json")
+    .Build();
+
+
+builder.Services.Configure<ECommerce.Lib.BE.Util.>(Configuration.GetSection("DatabaseSettings"));
+
+
+string connectionString = configuration.GetConnectionString("DefaultConnection");
 
 
 //builder.Services
