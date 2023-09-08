@@ -3,6 +3,7 @@ using ECommerce.Lib.BLL;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 
 namespace E_CommerceBacked.Controllers
@@ -14,12 +15,16 @@ namespace E_CommerceBacked.Controllers
     public class ECommerceEndPoints : Controller
     {
         private readonly IConfiguration _configuration;
-        private readonly ECommerce.Lib.BLL.Product _product;
+        private readonly ECommerce.Lib.BLL.Product _product; 
+        private readonly ECommerce.Lib.BE.Util.DBService _databaseSettings;
+
         public ECommerceEndPoints(IConfiguration configuration,
-            ECommerce.Lib.BLL.Product product)
+            ECommerce.Lib.BLL.Product product, 
+            IOptions<ECommerce.Lib.BE.Util.DBService> databaseSettings)
         {
             _configuration = configuration;
             _product= product;
+            _databaseSettings = databaseSettings.Value;
         }
 
         
@@ -28,6 +33,8 @@ namespace E_CommerceBacked.Controllers
         [Route("getAllProduct")]
         public async Task<List<ECommerce.Lib.BE.Product>> getAllProduct()
         {
+            Console.WriteLine(_databaseSettings);
+
             List<ECommerce.Lib.BE.Product> products = new();
             IdentityOptions identityOptions = new(); //study this
             IdentityUser identityUser = new(); //study this

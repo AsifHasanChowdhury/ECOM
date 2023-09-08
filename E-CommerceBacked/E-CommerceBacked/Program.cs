@@ -26,10 +26,9 @@ var configuration = new ConfigurationBuilder()
     .Build();
 
 
-builder.Services.Configure<ECommerce.Lib.BE.Util.>(Configuration.GetSection("DatabaseSettings"));
+builder.Services.Configure<ECommerce.Lib.BE.Util.DBService>(configuration.GetSection("ConnectionStrings"));
 
-
-string connectionString = configuration.GetConnectionString("DefaultConnection");
+builder.Services.Configure<FormatSettings>(builder.Configuration.GetSection("Formatting"));
 
 
 //builder.Services

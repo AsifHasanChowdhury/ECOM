@@ -29,7 +29,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient("", client =>
 {
 	client.BaseAddress = new Uri("https://localhost:7030");
-	client.Timeout=TimeSpan.FromSeconds(5);
+	client.Timeout=TimeSpan.FromSeconds(2000);
 	// You can add other configurations here
 });
 //I tried to call multiple API source
@@ -133,8 +133,8 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(name: "default", pattern: "{controller=Main}/{action=Index}/{id?}");
-
 app.MapControllerRoute(name: "secondary", pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(name: "default", pattern: "{controller=Main}/{action=Index}/{id?}");
 
 app.Run();

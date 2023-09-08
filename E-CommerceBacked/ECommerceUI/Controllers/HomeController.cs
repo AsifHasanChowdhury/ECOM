@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace ECommerceUI.Controllers
 {
-
+    [Route("[controller]")]
     //Sometimes need to rebuild to reAssign reference.
     public class HomeController : Controller
     {

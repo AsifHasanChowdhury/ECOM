@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ECommerce.Lib.BE.Util
 {
-    internal class DBService
+    public class DBService
     {
-        public string connectionString { get; set; }
+        public string DefaultConnection { get; set; }
     }
 }

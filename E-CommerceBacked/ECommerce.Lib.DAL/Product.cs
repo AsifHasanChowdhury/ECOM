@@ -3,7 +3,7 @@
     public class Product : IBaseDAL<Lib.BE.Product>
     {
         
-
+        
         public BE.Product create(BE.Product entity)
         {
             throw new NotImplementedException();
