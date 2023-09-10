@@ -10,5 +10,7 @@ namespace ECommerce.Lib.BE
     {
         public string email { get; set; }
         public string password { get; set; }
+
+        public string verificationToken { get; set; }
     }
 }

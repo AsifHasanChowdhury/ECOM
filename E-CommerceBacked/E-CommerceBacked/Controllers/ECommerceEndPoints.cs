@@ -1,6 +1,8 @@
 ﻿using System.Runtime.InteropServices.ComTypes;
+using ECommerce.Lib.BE;
 using ECommerce.Lib.BLL;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -17,14 +19,18 @@ namespace E_CommerceBacked.Controllers
         private readonly IConfiguration _configuration;
         private readonly ECommerce.Lib.BLL.Product _product; 
         private readonly ECommerce.Lib.BE.Util.DBService _databaseSettings;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
         public ECommerceEndPoints(IConfiguration configuration,
             ECommerce.Lib.BLL.Product product, 
-            IOptions<ECommerce.Lib.BE.Util.DBService> databaseSettings)
+            IOptions<ECommerce.Lib.BE.Util.DBService> databaseSettings,
+            IWebHostEnvironment webHostEnvironment
+            )
         {
             _configuration = configuration;
             _product= product;
-            _databaseSettings = databaseSettings.Value;
+            _databaseSettings = databaseSettings.Value;// holds database key
+            _webHostEnvironment = webHostEnvironment;
         }
 
         
@@ -33,13 +39,12 @@ namespace E_CommerceBacked.Controllers
         [Route("getAllProduct")]
         public async Task<List<ECommerce.Lib.BE.Product>> getAllProduct()
         {
-            Console.WriteLine(_databaseSettings);
 
             List<ECommerce.Lib.BE.Product> products = new();
             IdentityOptions identityOptions = new(); //study this
             IdentityUser identityUser = new(); //study this
             
-            products =_product.getAllData();
+            products =_product.getAllData("");
             return products;
         }
 
@@ -65,7 +70,6 @@ namespace E_CommerceBacked.Controllers
 
         [HttpPost]
         [Route("updateBatchProductDetails")]
-
         public async Task<IActionResult> updateBatchProductDetails()
         {
             return Ok(200);
@@ -75,7 +79,6 @@ namespace E_CommerceBacked.Controllers
 
         [HttpPost]
         [Route("updateBatchProductDetailsbyOid")]
-
         public async Task<IActionResult> updateBatchProductDetailsbyOid()
         {
             return Ok(200);
@@ -158,21 +161,65 @@ namespace E_CommerceBacked.Controllers
 
         [HttpPost]
         [Route("signUp")]
-        public async Task<IActionResult> signUp()
+        public async Task<IActionResult> signUp(ECommerce.Lib.BE.login login)
         {
-            return null;
+            ECommerce.Lib.BE.login  Login= new login()
+            {
+                email = login.email,
+                password = login.password,
+                verificationToken = ECommerce.Lib.BLL.UserVerification.VerificationToken()
+            };
+            ECommerce.Lib.BE.DB.JSONDatabase.UserList.Add(Login);
+            return Ok("You have been Registered");
 
         }
 
 
         [HttpPost]
         [Route("userLogin")]
-        public async Task<IActionResult> userLogin()
+        public async Task<IActionResult> userLogin(ECommerce.Lib.BE.login login)
         {
+
             return null;
 
         }
 
+
+        /// <summary>
+        /// File Upload Lesson
+        /// </summary>
+        /// <param name="imageFile"></param>
+        /// <returns></returns>
+
+        [HttpPost("UploadImage")]
+        public async Task<IActionResult> UploadImage(IFormFile imageFile)
+        {
+            if (imageFile != null && imageFile.Length > 0)
+            {
+                try
+                {
+                    string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images");
+                    string uniqueFileName = Guid.NewGuid().ToString() + "_" + imageFile.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await imageFile.CopyToAsync(fileStream);
+                    }
+
+                    // Save the 'filePath' in your database or return it to the client.
+                    return Ok(new { imagePath = "/images/" + uniqueFileName });
+                }
+                catch (Exception ex)
+                {
+                    return StatusCode(500, $"Internal server error: {ex.Message}");
+                }
+            }
+            else
+            {
+                return BadRequest("No image file was uploaded.");
+            }
+        }
 
 
     }
