@@ -13,6 +13,8 @@ namespace ECommerce.Lib.DAL
         public  T update(T entity);
         public T delete(T entity);
 
+        public T getDetailsbyOid(T entity);
+
 
     }
 }

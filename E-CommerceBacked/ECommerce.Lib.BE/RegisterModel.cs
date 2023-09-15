@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ECommerce.Lib.BE
 {
-    internal class RegisterModel
+    public class RegisterModel
     {
        
         [Required, Column(TypeName = "nvarchar(100)")]
@@ -29,5 +29,8 @@ namespace ECommerce.Lib.BE
 
         [Phone]
         public string phone { get; set; } = String.Empty;
+
+        public byte [] passwordHash { get; set; } = new byte [32];
+        public byte [] passwordSalt {get; set; }  = new byte[32];
     }
 }

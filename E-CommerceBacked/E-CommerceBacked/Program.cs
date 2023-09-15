@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,20 +31,32 @@ builder.Services.Configure<ECommerce.Lib.BE.Util.DBService>(configuration.GetSec
 
 builder.Services.Configure<FormatSettings>(builder.Configuration.GetSection("Formatting"));
 
+builder.Services.AddScoped<ECommerce.Lib.BLL.Product>(p =>
+{
+    // Resolve the DBService dependency using the IServiceProvider
+    var dbService = p.GetRequiredService<ECommerce.Lib.BE.Util.DBService>();
+
+    // Create and return the Product instance with the resolved DBService
+    return new ECommerce.Lib.BLL.Product(new ECommerce.Lib.DAL.Product(dbService));
+}).AddScoped<ECommerceEndPoints>(); ;
+
+// Register ECommerceEndPoints (if necessary)
+//builder.Services.AddScoped<ECommerceEndPoints>();
+
+
 
 //builder.Services
 //    .AddScoped<ECommerce.Lib.BLL.Product>
-//        (p =>
+//    (p =>
 //            { return new ECommerce.Lib.BLL.Product(new ECommerce.Lib.DAL.Product()); })
 //    .AddScoped<ECommerceEndPoints>();
 
 
-builder.Services
-    .AddScoped<ECommerce.Lib.BLL.Product>
-    (p=>{
-        return new ECommerce.Lib.BLL.Product(new ECommerce.Lib.DAL.Product());
-    });
-   
+//builder.Services
+//    .AddScoped<ECommerce.Lib.BLL.Product>
+//    (p=>{
+//        return new ECommerce.Lib.BLL.Product(new ECommerce.Lib.DAL.Product());
+//    });
 
 
 //builder.Services

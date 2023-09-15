@@ -249,7 +249,7 @@ namespace ECommerceUI.Controllers
         public async Task<IActionResult> signUp([FromBody] ECommerce.Lib.BE.login login)
         {
             string securityToken = "1234"; 
-            HttpResponseMessage response = await _httpClient.PostAsJsonAsync("Products/signUp", new StringContent(JsonConvert.SerializeObject(login), Encoding.UTF8, "application/json"));
+            HttpResponseMessage response = await _httpClient.PostAsync("Products/signUp", new StringContent(JsonConvert.SerializeObject(login), Encoding.UTF8, "application/json"));
 
             if (response.IsSuccessStatusCode)
             {

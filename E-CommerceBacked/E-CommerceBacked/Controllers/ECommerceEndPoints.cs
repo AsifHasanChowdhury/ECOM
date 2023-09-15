@@ -44,15 +44,21 @@ namespace E_CommerceBacked.Controllers
             IdentityOptions identityOptions = new(); //study this
             IdentityUser identityUser = new(); //study this
             
-            products =_product.getAllData("");
+            products =_product.getAllData();
             return products;
         }
 
+
         [HttpPost]
-        [Authorize(Policy = "IsAdminClaimAccess")]
+        //[Authorize(Policy = "IsAdminClaimAccess")]
         [Route("getAllProductbyAdmin")]
         public async Task<IActionResult> getAllProductbyAdmin()
         {
+
+            List<ECommerce.Lib.BE.Product> prodList = new();
+
+            prodList = _product.getAllData();
+
             return Ok(200);
 
         }
@@ -60,7 +66,7 @@ namespace E_CommerceBacked.Controllers
         [HttpPost]
         [ProducesResponseType(200)]
         [Route("getProductbyID")]
-        public async Task<ECommerce.Lib.BE.Product> getProductbyID([FromBody] string id)
+        public async Task<ECommerce.Lib.BE.Product> getProductbyID(ECommerce.Lib.BE.login login)
         {
 
             ECommerce.Lib.BE.Product product = new();
@@ -161,15 +167,34 @@ namespace E_CommerceBacked.Controllers
 
         [HttpPost]
         [Route("signUp")]
-        public async Task<IActionResult> signUp(ECommerce.Lib.BE.login login)
+        public async Task<IActionResult> signup(ECommerce.Lib.BE.login logo)
         {
-            ECommerce.Lib.BE.login  Login= new login()
+            ECommerce.Lib.BLL.UserVerification
+                .createrPasswordHash(logo.password,out byte [] PasswordHash, out byte[] passwordSalt);
+
+            ECommerce.Lib.BE.RegisterModel  user= new ()
             {
-                email = login.email,
-                password = login.password,
+                email = logo.email,
+                passwordHash = PasswordHash,
+                passwordSalt = passwordSalt,
                 verificationToken = ECommerce.Lib.BLL.UserVerification.VerificationToken()
             };
-            ECommerce.Lib.BE.DB.JSONDatabase.UserList.Add(Login);
+
+            foreach(byte data in  user.passwordHash)
+            {
+                Console.Write(data);
+            }
+            Console.WriteLine();
+
+            foreach (byte data in user.passwordSalt)
+            {
+                Console.Write(data);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine(user.verificationToken);
+
+            ECommerce.Lib.BE.DB.JSONDatabase.UserList.Add(user);
             return Ok("You have been Registered");
 
         }

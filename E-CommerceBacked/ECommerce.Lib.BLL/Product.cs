@@ -9,7 +9,7 @@
             
         }
         
-        public List<Lib.BE.Product> getAllData(string ConnectionString)
+        public  List<Lib.BE.Product> getAllData()
         {
             return product.readAll();
         }

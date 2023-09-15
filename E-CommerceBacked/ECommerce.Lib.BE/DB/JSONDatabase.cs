@@ -8,6 +8,6 @@ namespace ECommerce.Lib.BE.DB
 {
     public class JSONDatabase
     {
-        public static List<ECommerce.Lib.BE.login> UserList { get; set; }
+        public static List<ECommerce.Lib.BE.RegisterModel> UserList = new();
     }
 }
