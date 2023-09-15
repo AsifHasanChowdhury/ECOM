@@ -65,6 +65,11 @@ namespace ECommerce.Lib.DAL
             throw new NotImplementedException();
         }
 
+        public BE.Order getDetailsbyOid(BE.Order entity)
+        {
+            throw new NotImplementedException();
+        }
+
 
         private void MakeBEFromDr(SqlDataReader dr, BE.Product prod)
         {

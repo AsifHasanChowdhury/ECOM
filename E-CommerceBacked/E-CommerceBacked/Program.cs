@@ -2,6 +2,7 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using E_CommerceBacked.Controllers;
 using ECommerce.Lib.BE;
+using ECommerce.Lib.BE.Util;
 using ECommerce.Lib.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http.Features;
@@ -28,17 +29,16 @@ var configuration = new ConfigurationBuilder()
 
 
 builder.Services.Configure<ECommerce.Lib.BE.Util.DBService>(configuration.GetSection("ConnectionStrings"));
-
-builder.Services.Configure<FormatSettings>(builder.Configuration.GetSection("Formatting"));
+//builder.Services.Configure<FormatSettings>(builder.Configuration.GetSection("Formatting"));
 
 builder.Services.AddScoped<ECommerce.Lib.BLL.Product>(p =>
 {
-    // Resolve the DBService dependency using the IServiceProvider
-    var dbService = p.GetRequiredService<ECommerce.Lib.BE.Util.DBService>();
+    //// Resolve the DBService dependency using the IServiceProvider
+    var dbService = p.GetRequiredService<IOptions<DBService>>().Value;
 
     // Create and return the Product instance with the resolved DBService
     return new ECommerce.Lib.BLL.Product(new ECommerce.Lib.DAL.Product(dbService));
-}).AddScoped<ECommerceEndPoints>(); ;
+}).AddScoped<ECommerceEndPoints>();
 
 // Register ECommerceEndPoints (if necessary)
 //builder.Services.AddScoped<ECommerceEndPoints>();

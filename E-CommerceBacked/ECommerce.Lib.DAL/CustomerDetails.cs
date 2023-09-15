@@ -21,5 +21,12 @@
         {
             throw new NotImplementedException();
         }
+
+
+        BE.CustomerDetails IBaseDAL<BE.CustomerDetails>.getDetailsbyOid(BE.CustomerDetails entity)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

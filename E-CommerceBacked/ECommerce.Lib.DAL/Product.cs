@@ -12,6 +12,7 @@ namespace ECommerce.Lib.DAL
         {
             _databaseSettings = databaseSettings;
         }
+
         public BE.Product create(BE.Product entity)
         {
            
@@ -39,10 +40,9 @@ namespace ECommerce.Lib.DAL
             List<ECommerce.Lib.BE.Product> productList = new();
             try
             {
-                string connectionString = "";
-                string sql = "GetAllProduct";
+                string sql = "dbo.SPproduct_getll";
 
-                SqlConnection connection = new SqlConnection(connectionString);
+                SqlConnection connection = new SqlConnection(_databaseSettings.DefaultConnection);
                 SqlCommand command = new SqlCommand();
                 command.Connection = connection;
                 command.CommandType = CommandType.StoredProcedure;

@@ -21,5 +21,12 @@
         {
             throw new NotImplementedException();
         }
+
+
+        public BE.ProductDetails getDetailsbyOid(BE.ProductDetails entity)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
